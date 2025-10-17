@@ -1,7 +1,7 @@
 import Contato from "./Contato";
 import Depoimentos from "./Depoimentos";
 import Inicio from "./Inicio";
-import Portfolio from "./portfolio";
+import Portfolio from "./Portfolio";
 import Servicos from "./Servicos";
 
 export default function Main(){
