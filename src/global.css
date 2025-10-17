@@ -1,0 +1,149 @@
+:root {
+    --primary-color: #FF7F11;
+    /* Laranja */
+    --secondary-color: #1A1A40;
+    /* Azul Escuro */
+    --accent-color: #A3E635;
+    /* Verde Limão */
+    --background-color: #FFFFFF;
+    /* Branco */
+    --text-color: #333;
+    --font-title: 'Poppins', sans-serif;
+    --font-text: 'Open Sans', sans-serif;
+    --header-height: 80px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-text);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding-top: var(--header-height);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* --- MODO ESCURO --- */
+body.dark-mode {
+    --background-color: #1f1f3d;
+    --text-color: #e0e0e0;
+    --secondary-color: #FFFFFF;
+}
+
+/* --- COMPONENTES GERAIS --- */
+.btn {
+    padding: 12px 28px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+    display: inline-block;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* --- MODO ESCURO TOGGLE SWITCH --- */
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked+.slider {
+    background-color: var(--primary-color);
+}
+
+input:checked+.slider:before {
+    transform: translateX(26px);
+}
+
+/* --- SEÇÕES --- */
+.section {
+    padding: 80px 5%;
+    text-align: center;
+}
+
+.section-alt {
+    background-color: #f9f9f9;
+}
+
+body.dark-mode .section-alt {
+    background-color: #1A1A40;
+}
+
+.section-title {
+    font-family: var(--font-title);
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: var(--secondary-color);
+}
+
+body.dark-mode .section-title {
+    color: var(--primary-color);
+}
+
+/* Acessibilidade: classe para esconder elementos visualmente, mas mantê-los para leitores de tela */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}

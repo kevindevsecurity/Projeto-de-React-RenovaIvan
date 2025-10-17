@@ -1,0 +1,17 @@
+/* --- RODAPÉ E BOTÃO WHATSAPP --- */
+.footer {
+    background-color: var(--secondary-color);
+    color: white;
+    text-align: center;
+    padding: 20px 5%;
+}
+
+body.dark-mode .footer {
+    background-color: #1A1A40;
+}
+
+.footer-dev {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
